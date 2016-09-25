@@ -1,14 +1,7 @@
 <template>
     <section>
         <ul>
-            <li v-for="book in books">
-                <div class="book-cover"><img :src="book.cover" alt=""></div>
-                <div class="book-info">
-                    <h3 class="book-title">{{book.name}}</h3>
-                    <p class="book-author">{{book.author}} - {{book.authorEN}}</p>
-                    <p class="book-publish">{{book.publisher}}, {{book.publishDate}} {{book.pages}} {{book.size}}</p>
-                </div>
-            </li>
+            <item v-for="book in books" :book="book"></item>
         </ul>
     </section>
 </template>
@@ -20,6 +13,7 @@
 </style>
 <script>
     import Result from '../model/Result.js'
+    import ResultItem from './ResultItem.vue'
     export default{
         data(){
             return{
@@ -35,6 +29,7 @@
             }
         },
         components:{
+            item: ResultItem
         }
     }
 </script>
