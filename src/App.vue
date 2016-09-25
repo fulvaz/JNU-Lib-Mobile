@@ -40,4 +40,20 @@ export default {
 body {
   margin: 0;
 }
+
+  a:link {
+
+  }
+
+  a:visited {
+
+  }
+
+  a:hover {
+
+  }
+
+  a:active {
+
+  }
 </style>

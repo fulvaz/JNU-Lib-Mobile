@@ -5,10 +5,15 @@
         </ul>
     </section>
 </template>
-<style>
+<style scoped>
     section {
+        background-color: #e7e7e7;
         min-height: calc(100vh - 3em);
 
+    }
+    ul {
+        margin: 0;
+        padding: 0;
     }
 </style>
 <script>
