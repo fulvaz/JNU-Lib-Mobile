@@ -66,7 +66,6 @@
 </style >
 
 <script>
-    import router from '../router.js'
     export default{
         data(){
             return{

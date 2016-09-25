@@ -11,6 +11,7 @@
     "font-awesome": "^4.6.3",
     "vue": "^1.0.0",
     "vue-head": "^2.0.6",
+    "vue-resource": "^1.0.3",
     "vue-router": "^0.7.13"
   },
   "devDependencies": {
