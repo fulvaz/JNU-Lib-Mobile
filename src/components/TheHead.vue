@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1 class="header-logo">jnu</h1>
+        <a v-link="{path: '/'}"><h1 class="header-logo">jnu</h1></a>
         <nav class="header-nav">
             <!--以后这里要处理登录-->
             <ul class="clearfix">
@@ -27,6 +27,7 @@
         color: white;
 
         .header-logo {
+            color: white;
             text-transform: uppercase;
             font-family: PingFangSC-Semibold, sans-serif;
         }

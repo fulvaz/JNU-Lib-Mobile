@@ -1,20 +1,17 @@
 <template>
   <the-head></the-head>
   <router-view></router-view>
-  <the-foot></the-foot>
 
 </template>
 
 <script>
   import theHead from './components/TheHead.vue'
-  import theFoot from './components/TheFoot.vue'
   import Index from './components/Index.vue'
 
 
 export default {
   components: {
     'the-head': theHead,
-    'the-foot': theFoot,
     'index': Index
   },
   data () {
@@ -42,18 +39,19 @@ body {
 }
 
   a:link {
-
+    color: black;
+    text-decoration: none;
   }
 
   a:visited {
-
+    color: black;
   }
 
   a:hover {
-
+    color: black;
   }
 
   a:active {
-
+    color: black;
   }
 </style>

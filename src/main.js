@@ -18,11 +18,22 @@ router.map({
     component: Index
   },
   '/result/:query': {
+    name: 'result',
     component: Result
   },
-  '/book': {
+  '/book/:id': {
     component: Book
   }
 })
+//
+// router.redirect({
+//   '*': '/'
+// })
+
+router.beforeEach(function () {
+  window.scrollTo(0, 0)
+})
+
+router.go('/')
 
 router.start(App, 'app');

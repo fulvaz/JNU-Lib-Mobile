@@ -28,6 +28,7 @@
         route: {
             // 我来尝尝语法糖
             data: function(transition) {
+                // TODO 需要重构一下
               return this.$http.get('http://localhost:8080/dist/static/JSON/result.json').then((res) => {
                   return {books: res.body}
               });

@@ -2,7 +2,7 @@
 <li>
     <div class="book-cover"><img :src="book.cover" alt=""></div>
     <div class="book-info">
-        <h3 class="book-title">{{book.name}}</h3>
+        <a v-link="{path: './book/' + book.url}"><h3 class="book-title">{{book.name}}</h3></a>
         <p class="book-author">{{book.author}} - {{book.authorEN}}</p>
         <p class="book-publish">{{book.publisher}}, {{book.publishDate}} {{book.pages}} {{book.size}}</p>
     </div>

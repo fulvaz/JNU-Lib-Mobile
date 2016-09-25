@@ -4,15 +4,16 @@
        <section>
            <h2>学而时习之 不亦说乎 </h2>
            <div class="search-container">
-               <form action="">
-                   <input type="text" class="search" v-model="query" v-on:keyup.enter="search">
+               <form action="#" @submit.prevent="search">
+                   <input type="text" class="search" v-model="query">
                </form>
-               <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+               <a v-link="{name: 'result', params: {'query': query}}"><i class="fa fa-search" aria-hidden="true"></i></a>
            </div>
        </section>
     </div>
+    <foot></foot>
 </template>
-<style lang="sass">
+<style lang="sass" scoped>
 
     .main {
         display: flex;
@@ -53,7 +54,7 @@
                 text-indent: 1.5rem;
             }
             
-            i {
+            a {
                 position: absolute;
                 top: 0.5rem;
                 left: 0.5rem;
@@ -66,6 +67,7 @@
 </style >
 
 <script>
+    import Foot from './TheFoot.vue'
     export default{
         data(){
             return{
@@ -73,10 +75,14 @@
             }
         },
         components:{
+            foot: Foot
         },
         methods: {
             search: function() {
-                this.$router.go('/result/' + this.query)
+                this.$router.go({
+                    name: 'result',
+                    params: {'query': this.query}
+                })
             }
         }
     }
