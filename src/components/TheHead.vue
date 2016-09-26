@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <a v-link="{path: '/'}"><h1 class="header-logo">jnu</h1></a>
+        <a v-link="{path: '/'}"><h1 class="header-logo">jnulib</h1></a>
         <nav class="header-nav">
             <!--以后这里要处理登录-->
             <ul class="clearfix">
@@ -19,7 +19,7 @@
         align-items: center;
 
         box-sizing: border-box;
-        padding: 15px;
+        padding: 1rem;
 
         height: 3em;
 

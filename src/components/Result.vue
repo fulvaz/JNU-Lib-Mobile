@@ -1,7 +1,7 @@
 <template>
     <section>
         <ul>
-            <item v-for="book in books" :book="book"></item>
+            <li v-for="book in books"><item :book="book"></item></li>
         </ul>
     </section>
 </template>
@@ -11,13 +11,17 @@
         min-height: calc(100vh - 3em);
 
     }
+
+    li {
+        display: block;
+        margin-bottom: 5px;
+    }
     ul {
         margin: 0;
         padding: 0;
     }
 </style>
 <script>
-    import Result from '../model/Result.js'
     import ResultItem from './ResultItem.vue'
     export default{
         data(){
@@ -33,6 +37,7 @@
                   return {books: res.body}
               });
             }
+
         },
         components:{
             item: ResultItem

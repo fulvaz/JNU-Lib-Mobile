@@ -1,21 +1,23 @@
 <template>
-<li>
-    <div class="book-cover"><img :src="book.cover" alt=""></div>
-    <div class="book-info">
-        <a v-link="{path: './book/' + book.url}"><h3 class="book-title">{{book.name}}</h3></a>
-        <p class="book-author">{{book.author}} - {{book.authorEN}}</p>
-        <p class="book-publish">{{book.publisher}}, {{book.publishDate}} {{book.pages}} {{book.size}}</p>
+    <div class="container" @click="select">
+        <div class="book-cover"><img :src="book.cover" alt=""></div>
+        <div class="book-info">
+            <!--TOOD-->
+            <a v-link="{path: '/book/' + book.id}"><h3 class="book-title">{{book.name}}</h3></a>
+            <p class="book-author">{{book.author}} - {{book.authorEN}}</p>
+            <p class="book-publish">{{book.publisher}}, {{book.publishDate}} {{book.pages}} {{book.size}}</p>
+        </div>
     </div>
-</li>
+
 </template>
 <style scoped lang="sass">
-    li {
+    .container {
         padding: 15px 30px;
-        margin-bottom: 5px;
         display: flex;
 
         background-color: white;
     }
+
     .book-cover {
         margin-right: 10px;
         flex: 1 1 50px;
@@ -28,9 +30,20 @@
 
 </style>
 <script>
+    import BookStore from '../model/Book.js'
     export default {
         props: {
             book: Object
+        },
+        methods: {
+          select() {
+            BookStore.setBook(this.book).then((res) => {
+            });
+          }
+        },
+
+        route: {
+
         }
     }
 </script>

@@ -54,4 +54,12 @@ body {
   a:active {
     color: black;
   }
+   li {
+     list-style: none;
+   }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
 </style>

@@ -22,6 +22,7 @@ router.map({
     component: Result
   },
   '/book/:id': {
+    name: 'book',
     component: Book
   }
 })
