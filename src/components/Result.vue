@@ -23,6 +23,7 @@
 </style>
 <script>
     import ResultItem from './ResultItem.vue'
+    import config from '../config/config'
     export default{
         data(){
             return{
@@ -32,8 +33,12 @@
         route: {
             // 我来尝尝语法糖
             data: function(transition) {
-                // TODO 需要重构一下
-              return this.$http.get('http://localhost:8080/dist/static/JSON/result.json').then((res) => {
+
+              return this.$http.get(config.searchURL + '/' + this.$route.params.query).then((res) => {
+                  res.body.forEach((e) => {
+                    e.urlBase64 = btoa(e.url);
+                    return e;
+                  });
                   return {books: res.body}
               });
             }

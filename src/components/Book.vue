@@ -48,6 +48,7 @@
     import BookStore from '../model/Book.js'
     import Borrow from './Borrow.vue'
     import Bar from './BookController.vue'
+    import config from '../config/config'
     export default{
         data(){
             return{
@@ -63,8 +64,8 @@
                 // TODO refine this
                 return Promise.all([
                     BookStore.getBook(),
-                    this.$http.get('http://localhost:8080/dist/static/JSON/book.json')
-                ]).then(([book, {body: {borrowInfo: borrowInfo}}]) => ({book, borrowInfo}))
+                    this.$http.get(config.bookURL + '/' + this.$route.params.id)
+                ]).then(([book, {body: borrowInfo}]) => ({book, borrowInfo}))
 
             }
         },

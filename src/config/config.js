@@ -1,3 +1,6 @@
+var server = 'http://localhost:4567';
+
 export default {
-  searchURL: 'http://localhost:8080/dist/static/JSON/result.json'
+  searchURL: server + '/search',
+  bookURL: server + '/book'
 }

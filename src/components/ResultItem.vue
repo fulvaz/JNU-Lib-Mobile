@@ -2,14 +2,13 @@
     <div class="container" @click="select">
         <div class="book-cover"><img :src="book.cover" alt=""></div>
         <div class="book-info">
-            <!--TOOD-->
-            <a v-link="{path: '/book/' + book.id}"><h3 class="book-title">{{book.name}}</h3></a>
-            <p class="book-author">{{book.author}} - {{book.authorEN}}</p>
-            <p class="book-publish">{{book.publisher}}, {{book.publishDate}} {{book.pages}} {{book.size}}</p>
+
+            <a v-link="{path: '/book/' + book.urlBase64}"><h3 class="book-title">{{book.name}}</h3></a>
+            <p v-html="book.bookDetail"></p>
         </div>
     </div>
-
 </template>
+
 <style scoped lang="sass">
     .container {
         padding: 15px 30px;
@@ -36,10 +35,10 @@
             book: Object
         },
         methods: {
-          select() {
-            BookStore.setBook(this.book).then((res) => {
-            });
-          }
+            select() {
+                BookStore.setBook(this.book).then((res) => {
+                });
+            }
         },
 
         route: {
